@@ -26,4 +26,6 @@ Windows build only; download the archive [SpaceBirds-Win32.rar](/Build/Win32/Spa
 
 [Google Roboto Fonts](https://fonts.google.com/specimen/Roboto)
 
-[Nico Maxmilian](http://www.indiegamemusic.com/viewartist.php?id=1958) for the music track [Distance Between Two Worlds](http://www.indiegamemusic.com/viewtrack.php?id=3191).
+[Nico Maxmilian](http://www.indiegamemusic.com/viewartist.php?id=1958) for the music track [Distance Between Two Worlds](http://www.indiegamemusic.com/viewtrack.php?id=3191)
+
+Thank you!
