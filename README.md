@@ -1,7 +1,7 @@
 # LD40-SpaceBirds
 An ambient game for Ludum Dare 40, theme: The more you have, the worse it is,
 
-![Space Birds Screenshot](/SpaceBirds.png)
+![Space Birds Screenshot](/SpaceBirds.jpg)
 
 ## Trivia
 
