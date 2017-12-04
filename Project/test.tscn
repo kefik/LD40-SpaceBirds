@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://scripts/Stars.gd" type="Script" id=1]
+[ext_resource path="res://scripts/SmallShips.gd" type="Script" id=2]
+[ext_resource path="res://gfx/ship.png" type="Texture" id=3]
+[ext_resource path="res://scripts/PlayerMouse.gd" type="Script" id=4]
+[ext_resource path="res://scripts/UI.gd" type="Script" id=5]
+[ext_resource path="res://label_background.tscn" type="PackedScene" id=6]
+
+[node name="Game" type="Node2D"]
+
+[node name="Stars1" type="Node2D" parent="."]
+
+script/script = ExtResource( 1 )
+total_stars = -1
+max_stars_per_frame = 1
+min_star_speed = 60
+max_star_speed = 100
+startTimeDelay = 2.5
+
+[node name="Stars2" type="Node2D" parent="."]
+
+script/script = ExtResource( 1 )
+total_stars = -1
+max_stars_per_frame = 1
+min_star_speed = 100
+max_star_speed = 150
+startTimeDelay = 2.5
+
+[node name="SmallShips" type="Container" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+script/script = ExtResource( 2 )
+spawn_time = 3
+spawn_time_rand = 0.5
+currTime = 0.5
+
+[node name="Player" type="Sprite" parent="."]
+
+transform/pos = Vector2( 400, 400 )
+transform/scale = Vector2( 0.25, 0.25 )
+z/z = 10
+z/relative = false
+texture = ExtResource( 3 )
+script/script = ExtResource( 4 )
+
+[node name="UI" type="Container" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 5.0
+margin/top = 5.0
+margin/right = 45.0
+margin/bottom = 45.0
+script/script = ExtResource( 5 )
+playerEnergyMax = 10
+
+[node name="Time" parent="UI" instance=ExtResource( 6 )]
+
+text = "Time: 0"
+backgroundWidth = 60
+
+[node name="Score" parent="UI" instance=ExtResource( 6 )]
+
+margin/top = 25.0
+margin/bottom = 42.0
+text = "Score: 0"
+backgroundWidth = 60
+
+[node name="Birds" parent="UI" instance=ExtResource( 6 )]
+
+margin/top = 50.0
+margin/bottom = 67.0
+text = "#Birds: 0"
+backgroundWidth = 60
+
+[node name="Flock" parent="UI" instance=ExtResource( 6 )]
+
+margin/top = 75.0
+margin/bottom = 92.0
+text = "#Flock: 0"
+backgroundWidth = 60
+
+[node name="EnergyDelta" parent="UI" instance=ExtResource( 6 )]
+
+margin/top = 100.0
+margin/bottom = 117.0
+text = "Δ Energy: 0"
+backgroundWidth = 60
+
+[node name="Energy" parent="UI" instance=ExtResource( 6 )]
+
+margin/top = 125.0
+margin/bottom = 142.0
+text = "Energy: 100"
+backgroundWidth = 60
+
+

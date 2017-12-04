@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://gfx/ship_90d.png" type="Texture" id=1]
+[ext_resource path="res://scripts/SmallShip.gd" type="Script" id=2]
+
+[node name="SmallShip" type="Sprite"]
+
+transform/pos = Vector2( 367.072, 90.8748 )
+transform/scale = Vector2( 0.1, 0.1 )
+z/z = 1
+z/relative = false
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+reactionDistance = 150
+cruiseSpeed = 50
+accelPerc = 2
+rotationSpeedPerc = 4
+followSpeed = 100
+myColor = -1
+targetColor = Color( 0, 0, 0, 1 )
+flocking = true
+flockDistance = 100
+flockHeadingWeight = 1.0
+flockCenterWeight = 0.5
+flockAvoidanceWeight = 0.3
+
+
