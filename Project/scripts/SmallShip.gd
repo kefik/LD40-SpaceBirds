@@ -25,6 +25,8 @@ var currentSpeed = -1
 
 var inFlock = false
 
+var others = []
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -59,13 +61,29 @@ func cruise(delta):
 		move_in_dir(delta, cruiseSpeed)
 	
 func flock(delta):
-	var others = []
-	# FIND OTHER SHIPS
-	for ship in get_parent().get_children():
-		if ship == get_node("."):
-			continue
+	var current = []
+	
+	for ship in others:
 		if (ship.get_pos() - get_pos()).length() < flockDistance:
-			others.push_back(ship)
+			current.push_back(ship)
+	
+	# FIND OTHER SHIPS
+	if current.size() < 10:
+		for ship in get_parent().get_children():
+			if ship == get_node("."):
+				continue
+			if (ship.get_pos() - get_pos()).length() < flockDistance:
+				var add = true
+				for c in current:
+					if c == ship:
+						add = false
+						break
+				if add:
+					current.push_back(ship)
+					if current.size() >= 15:
+						break
+	
+	others = current
 	
 	if others.size() == 0:
 		move_in_dir(delta, cruiseSpeed)

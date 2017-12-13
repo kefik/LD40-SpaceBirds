@@ -14,6 +14,7 @@ onready var birds = get_node("/root/Game/UI/Birds")
 onready var flock = get_node("/root/Game/UI/Flock")
 onready var energyDelta = get_node("/root/Game/UI/EnergyDelta")
 onready var energy = get_node("/root/Game/UI/Energy")
+onready var player = get_node("/root/Game/Player")
 onready var labels = [ time, score, birds, flock, energyDelta, energy ]
 
 onready var music = get_node("/root/Game/Music")
@@ -26,6 +27,7 @@ var gameTime = 0
 
 var targetEnergyDeltaColor = Color(1,1,1,0.3)
 var targetEnergyColor = Color(1,1,1,0.3)
+var targetPlayerColor = Color(1, 1, 1, 1)
 
 var playing = true
 
@@ -83,6 +85,12 @@ func _process(delta):
 		
 	nextColor = Utils.tween_color_perc(energy.get_child(0).get_modulate(), targetEnergyColor, 1, delta)
 	energy.get_child(0).set_modulate(nextColor)
+	
+	# PLAYER COLOR
+	a = player.get_modulate().a
+	targetPlayerColor = Color(playerEnergy/playerEnergyMax, playerEnergy/playerEnergyMax, playerEnergy/playerEnergyMax, a)	
+	nextColor = Utils.tween_color_perc(player.get_modulate(), targetPlayerColor, 10, delta)
+	player.set_modulate(nextColor)
 	
 	#ADAPT BACKGROUND SIZES
 	var m = labels[0].backgroundWidth
