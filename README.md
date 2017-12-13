@@ -18,7 +18,7 @@ I hope you enjoy it.
 
 ## Run
 
-Windows build only; download the archive [SpaceBirds-Win32.rar](/Build/Win32/SpaceBirds-Win32.rar), unpack it and run SpaceBirds.exe from within Win32 folder.
+Windows build only; download the archive [SpaceBirds-Win64.rar](/Build/WSpaceBirds-Win64.rar), unpack it and run SpaceBirds.exe from within SpaceBirds-Win64 folder.
 
 ## Credits
 
