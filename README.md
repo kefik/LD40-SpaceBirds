@@ -8,9 +8,7 @@ An ambient game for Ludum Dare 40, theme: The more you have, the worse it is,
 My goal was to play around with [Godot Engine](https://godotengine.org/), version 2.1.4. Never used it before.
 Unfortunately, I had much less time than originally planned; created in aprox. 9 hours.
 
-In the end, I've struck some inefficiency in Godot that sometimes make the game tearing a lot;
-could not get around it (everything is pooled, no GC). Partially, I think the mouse mode is
-to blame... just a gist.
+Beware: 40k simple math operations per frame is a bit too much for GDScript...
 
 Try to be calm and contemplative, almost meditation-like, when you play the game.
 
